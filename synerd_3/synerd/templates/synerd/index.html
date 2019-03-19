@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<meta charset="UTF-8" >
+		<title>Synergy of Diaspora</title>
+		<link id="pagestyle" rel="stylesheet" type="text/css" href="{% static 'synerd/css/css.css' %}">
+		<script>
+			function swapCSS(sheet) {
+				document.getElementById('pagestyle').setAttribute('href', sheet);
+				localStorage.setItem("sheet", sheet);
+				}
+
+			window.onload
+				swapCSS(localStorage.getItem("sheet") || "{% static 'synerd/css/css.css' %}" );
+
+			function allowDrop(ev) {
+		        ev.preventDefault();
+		      }
+
+		    function drag(ev) {
+		        ev.dataTransfer.setData("text", ev.target.id);
+		      }
+
+		    function drop(ev) {
+		        ev.preventDefault();
+		        var data = ev.dataTransfer.getData("text");
+		        ev.target.appendChild(document.getElementById(data));
+		      }
+		</script>
+		<style>
+		.slider {display:none;
+			width: 600px;
+			height: 400px;}
+		.contentText {
+			padding-left: 10px;}
+		</style>
+	</head>
+
+	<body>
+		<div id="header"> <!--Items in Header ID will stick to the top of the screen in compatible web browsers-->
+
+			<div class="right"><a class="aSpacing" href="#" >GALLERIES</a> <a class="aSpacing" href="#" >ABOUT US</a> <a class="aSpacing" href="#" >CONTACT US</a> <input class="aSpacing searchField" type="text" placeholder="Search synerD..."></input><button>Search</button></div>
+			<img class="floatleft" style="width: 300px; padding-left: 10px;" src="{% static 'synerd/images/logo.png' %}" alt="logo" /> <p class="right" style="font-size: 24px;">Let's Serve Purposefully
+			<a href="#">
+				<svg style="width: 100px; height: 30px;"">
+  					<rect width="300" height="100" style="fill:rgb(97,123,255)"/>
+					<text fill="#000000" font-size="22" font-family="Arial" font-weight="bold" x="15" y="22">Donate</text>
+					Sorry, your browser does not support inline SVG.
+				</svg>
+				<!--<img style="width: 5%; padding-left: 15px; padding-right: 15px; padding-top: 5px; padding-bottom: 5px; background-color: #617bff;" src="{% static 'synerd/images/donate.png' %}" alt="dontate" />-->
+			</a></p>
+			<p class="right"><a class="aSpacing" href="{% url 'login' %}">SIGN IN</a> | <a class="aSpacing" href="{% url 'registration' %}">JOIN US</a></p><br />
+			<!--Start of Navigation Bar -->
+			<nav class="right">
+			<ul>
+				<li><a href="{% url 'home' %}">HOME</a></li>
+				<li><a href="#">OUR WORK</a></li>
+				<li><a href="#">MEMBERS</a></li>
+                <li><a href="#">RESOURCES</a></li>
+			</ul>
+			</nav>
+			<!--End of Navigation Bar -->
+
+		</div>
+		<div id="content">
+		<table class="center" width="100%">
+			<tr>
+				<td>
+					<div id="sliderImages">
+						<img src="{% static 'synerd/images/slider/1.jpg' %}" alt="synerD - Let's Server Purposefully" class="slider" />
+						<img src="{% static 'synerd/images/slider/2.jpg' %}" alt="synerD - Let's Server Purposefully" class="slider" />
+						<img src="{% static 'synerd/images/slider/3.jpg' %}" alt="synerD - Let's Server Purposefully" class="slider" />
+						<img src="{% static 'synerd/images/slider/4.jpg' %}" alt="synerD - Let's Server Purposefully" class="slider" />
+						<img src="{% static 'synerd/images/slider/5.jpg' %}" alt="synerD - Let's Server Purposefully" class="slider" />
+
+						<script>
+							var sliderIndex = 0;
+							slider();
+
+							function slider() {
+							var i;
+							var x = document.getElementsByClassName("slider");
+							for (i = 0; i < x.length; i++) {
+								x[i].style.display = "none";
+							}
+							sliderIndex++;
+							if (sliderIndex > x.length) {sliderIndex = 1}
+							x[sliderIndex-1].style.display = "block";
+							setTimeout(slider, 3000);
+							}
+						</script>
+					</div>
+				</td>
+				<td>
+					<div style="margin-left: 15px;">
+						<h1 style="margin-top: 20px;" class="contentText contentFocus">Doing the most good in our communites</h1>
+						<p style="padding: 10px; font-size: 18px;" class="contentText contentFocus">Synergy of Diaspora is a non-profit charity organization that is invested in helping our local communities, and those in need throuought our nation.</p>
+					</div>
+
+					<div style="margin-left: 15px; padding: 10px;" class="contentFocus left">
+						<p class="contentText">Whether you’re considering: </p>
+							<ul style="margin-left: 30px;" class="contentText">
+								<li>making a one-time contribution</li>
+								<li>donating your time</li>
+								<li>setting up recurring contributions</li>
+								<li>or even more</li>
+							</ul>
+						<p class="contentText">Your contribution(s) will positively impact many lives.</p>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table width="100%">
+			<tr>
+				<td>
+					<div style="margin-left: 15px;">
+						<h1 style="margin-top: 20px;" class="contentText contentFocus">Upcoming Event</h1>
+						<p style="padding: 10px; font-size: 18px;" class="contentText contentFocus">In March, Synergy of Diaspora will be hosting a charity dinner to raise money for our local community. Check back often, registration opens soon!</p>
+					</div>
+
+					<div style="margin-left: 15px; padding: 10px;" class="contentFocus">
+						<p class="contentText">Highlights: </p>
+							<ul style="margin-left: 30px;" class="contentText">
+								<li>3 Famous Guest Speakers</li>
+								<li>Chance to meet the families you're helping</li>
+								<li>Representatives from 50 local organizations</li>
+								<li>and plenty more...</li>
+							</ul>
+						<p class="contentText">Keep an eye on this page, registration will open soon!</p>
+					</div>
+
+				</td>
+				<td>
+					<div >
+						<img src="{% static 'synerd/images/6.jpg' %}" style="width: 600px; height: 400px;" alt="synerD - Let's Server Purposefully" />
+
+					</div>
+				</td>
+			</tr>
+		</table>
+		<table width="100%">
+			<tr>
+				<td>
+					<div style="margin-left: 15px;">
+						<h1 style="margin-top: 20px;" class="contentText contentFocus">Charity Donation Events</h1>
+						<p style="padding: 10px; font-size: 18px;" class="contentText contentFocus">Our charity organization helps host donation events in our local communities. Visit the 'Ways to Give' page to see details about future donation events!</p>
+					</div>
+
+					<div style="margin-left: 15px; padding: 10px;" class="contentFocus">
+						<p class="contentText">Accepted drive items: </p>
+							<ul style="margin-left: 30px;" class="contentText">
+								<li>Clothes</li>
+								<li>Canned Goods</li>
+								<li>Toys</li>
+								<li>School Supplies</li>
+								<li>Anything else that may be helpful!</li>
+							</ul>
+					</div>
+					&nbsp;
+					<div style="margin-left: 15px; padding: 10px; height: 75px;" class="contentFocus">
+						<div class="dragDiv"  ondrop="drop(event)" ondragover="allowDrop(event)">
+							<img src="{% static 'synerd/images/donate.png' %}" draggable="true" ondragstart="drag(event)" id="drag1" width="100" height="30">
+						</div>
+						<div class="dragDiv"  ondrop="drop(event)" ondragover="allowDrop(event)">
+						</div>
+
+					</div>
+
+				</td>
+				<td>
+					<div >
+						<video id="videoplayer" width="600" height="400" autoplay="autoplay" controls="controls" loop>
+  							<source src="{% static 'synerd/videos/stockcharity.mp4' %}" type="video/mp4">
+ 							<source src="{% static 'synerd/videos/stockcharity.webm' %}" type="video/webm">
+  							Your browser does not support the video tag.
+						</video>
+					</div>
+				</td>
+			</tr>
+		</table>
+
+
+		<br /><br />
+		<br /><br />
+		<br />
+		</div>
+
+
+		<div id="footer">
+
+		<table class="floatleft">
+			<tr><td style="padding: 0px; padding-left: 10px;"><b>synerD</b></td></tr>
+			<tr><td style="padding: 0px; padding-left: 10px;">1340 Byrd Lane <br /> Gettysburg, SD 57442</td></tr>
+			<tr><td style="padding: 0px; padding-left: 10px;">(505) 251-1992</td></tr>
+			<tr><td style="padding: 0px; padding-left: 10px;">support@synerD.org</td></tr>
+		</table>
+		<table class="floatleft">
+			<tr>
+				<td>
+				</td>
+			</tr>
+			<tr><td style="padding: 0px; padding-left: 10px;">
+				<audio id="audiosource" controls style="width: 150px; display: block;">
+  					<source src="{% static 'synerd/audio/stockmusic.mp3' %}" type="audio/mp3">
+					Your browser does not support the audio element.
+				</audio>
+				<script>
+					var audio = document.getElementById("audiosource");
+		    		audio.volume=0.1;
+				</script>
+			</td></tr>
+		</table>
+		<table class="floatleft">
+			<tr>
+				<td>
+					<button id="locatio2" class="location" onclick="fetchGeoLocation()">Share Location</button>
+					<p id="geolocation"></p>
+					<script>
+						var geoinfo = document.getElementById("geolocation");
+
+						function fetchGeoLocation() {
+						  if (navigator.geolocation) {
+						    navigator.geolocation.getCurrentPosition(displayPosition);
+						  } else {
+						    geoinfo.innerHTML = "Geolocation is not supported by this browser.";
+						  }
+						}
+
+						function displayPosition(position) {
+						  geoinfo.innerHTML = "Latitude: " + position.coords.latitude.toFixed(2) +
+						  "<br>Longitude: " + position.coords.longitude.toFixed(2);
+						}
+					</script>
+				</td>
+			</tr>
+		</table>
+		<table class="floatright center" style="margin-right: 25%; text-transform: uppercase;">
+			<tr><td><a class="aSpacing" href="#" >Get Involved</a></td><td><a class="aSpacing" href="#" >About Us</a></td></tr>
+			<tr><td><a class="aSpacing" href="#" >Blog</a></td><td><a class="aSpacing" href="#" >Revenues</a></td></tr>
+			<tr><td><a class="aSpacing" href="#" >Ways to Give</a></td><td><a class="aSpacing" href="#" >Expenditures</a></td></tr>
+		</table>
+		<br /><br /><br /><br /><br /><br /><br />
+		<div class="floatleft"><a class="aSpacing" href="#" >Site Map</a> | <a class="aSpacing" href="#" >Terms & Conditions</a> | <a class="aSpacing" href="#" >Privacy Policy</a> | Copyright © 2019</div><div class="floatright"><a href="#" onclick="swapCSS('{% static 'synerd/css/css.css' %}')">LIGHT THEME</a><a href="#" onclick="swapCSS('{% static 'synerd/css/cssdark.css' %}')">DARK THEME</a></div>
+
+
+
+		</div>
+	</body>
+</html>
