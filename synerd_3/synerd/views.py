@@ -10,3 +10,6 @@ def LoginPageView(request):
 
 def RegistrationPageView(request):
     return render(request, 'synerd/registration.html')
+
+def PortalPageView(request):
+    return render(request, 'synerd/portal.html')
