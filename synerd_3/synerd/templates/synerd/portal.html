@@ -25,6 +25,10 @@
 			background-color: transparent;
 		}
 
+		th {
+            text-align: right !important;
+        }
+
 		  /* Style the tab */
 
     </style>
@@ -58,39 +62,21 @@
 
 						<!-- FORM BEGINS HERE-->
 						<div class="formDiv">
-							<form id="officeForm" action="" method="post" enctype="text/plain">
+							<form id="officeForm" action="." method="post">
 								<div>
 								<!-- <p style="display: inline; padding-left: 20%;">8 Characters</p> -->
 									<table class="tableDiv">
+										{{ office_form.as_table }}
 										<tr>
-											<td>
-												<label for="officeName">Office Name (*)</label>
-												<input type="text" name="officeName" required="required" placeholder="Enter your Office Name..">
+											<td class="right">
+											<input type="submit" value="Submit" id="submitID" style="margin: auto;">
 											</td>
 											<td>
-												<label for="officeCode">Office Code (*)</label>
-												<p style="display: inline; padding-left: 20%;"></p>
-												<input type="text" name="officeCode" required="required" placeholder="Enter your Office Code..">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label for="attribution">Attribution</label>
-												<input type="text" name="Attribution" placeholder="Specify Attribution..">
-											</td>
-											<td>
-
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<input type="submit" value="Submit" id="submitID" style="margin: auto;">
-											</td>
-											<td>
-												<input type="reset" value="Clear" style="margin: auto;">&nbsp;&nbsp;
+											<input type="reset" value="Clear" style="margin: auto;">
 											</td>
 										</tr>
 									</table>
+									{% csrf_token %}
 								</div>
 							</form>
 							<br />
@@ -104,40 +90,21 @@
 						<h3 class="center">Officer Registration Form</h3>
 						<!-- FORM BEGINS HERE-->
 						<div class="formDiv">
-							<form id="officerForm" action="" method="post" enctype="text/plain">
+							<form id="officerForm" action="." method="post">
 								<div>
 								<!-- <p style="display: inline; padding-left: 20%;">8 Characters</p> -->
 									<table class="tableDiv">
+										{{ officer_form.as_table }}
 										<tr>
-											<td>
-												<label for="subscriberID">Subscriber ID (*)</label>
-												<input type="text" name="subscriberID" required="required" placeholder="Enter your Subscriber ID..">
+											<td class="right">
+											<input type="submit" value="Submit" id="submitID" style="margin: auto;">
 											</td>
 											<td>
-												<label for="officeCode">Office Code (*)</label>
-												<p style="display: inline; padding-left: 20%;"></p>
-												<input type="text" name="officeCode" required="required" placeholder="Enter your Office Code..">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label for="startDate">Start Date</label>
-												<input type="date" name="startDate" placeholder="Specify Start Date.." required="required">
-											</td>
-											<td>
-												<label for="endDate">End Date</label>
-												<input type="date" name="endDate" placeholder="Specify End Date.." required="required">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<input type="submit" value="Submit" id="submitID" style="margin: auto;">
-											</td>
-											<td>
-												<input type="reset" value="Clear" style="margin: auto;">&nbsp;&nbsp;
+											<input type="reset" value="Clear" style="margin: auto;">
 											</td>
 										</tr>
 									</table>
+									{% csrf_token %}
 								</div>
 							</form>
 							<br />
@@ -150,70 +117,21 @@
 						<h3 class="center">Organization Registration Form</h3>
 						<!-- FORM BEGINS HERE-->
 						<div class="formDiv">
-							<form id="organizationForm" action="" method="post" enctype="text/plain">
+							<form id="organizationForm" action="." method="post">
 								<div>
 								<!-- <p style="display: inline; padding-left: 20%;">8 Characters</p> -->
 									<table class="tableDiv">
+										{{ org_form.as_table }}
 										<tr>
-											<td>
-												<label for="orgCode">Organization Code (*)</label>
-												<input type="text" name="orgCode" required="required" placeholder="Enter your Organization Code..">
+											<td class="right">
+											<input type="submit" value="Submit" id="submitID" style="margin: auto;">
 											</td>
 											<td>
-												<label for="orgName">Organization Name (*)</label>
-												<p style="display: inline; padding-left: 20%;"></p>
-												<input type="text" name="orgName" required="required" placeholder="Enter your Organization Name..">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label for="description">Description</label>
-												<input type="text" name="description" placeholder="Enter a description..">
-											</td>
-											<td>
-												<label for="dateJoined">Date Joined</label>
-												<input type="date" name="dateJoined" placeholder="Specify Date Joined.." required="required">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label for="address1">Address Line 1</label>
-												<input type="text" name="address1" required="required" placeholder="Enter Address Line 1..">
-											</td>
-											<td>
-												<label for="address2">Address Line 2</label>
-												<input type="text" name="address2" required="required" placeholder="Enter Address Line 2..">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label for="city">City</label>
-												<input type="text" name="address1" required="required" placeholder="Enter City..">
-											</td>
-											<td>
-												<label for="state">State</label>
-												<input type="text" name="state" required="required" placeholder="Enter State..">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label for="zip">Zip</label>
-												<input type="text" name="zip" required="required" placeholder="Enter Zip..">
-											</td>
-											<td>
-												<label for="phoneNumber">Phone Number</label>
-												<input type="text" name="phoneNumber" required="required" placeholder="Phone Number..">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<input type="submit" value="Submit" id="submitID" style="margin: auto;">
-											</td>
-											<td>
-												<input type="reset" value="Clear" style="margin: auto;">&nbsp;&nbsp;
+											<input type="reset" value="Clear" style="margin: auto;">
 											</td>
 										</tr>
 									</table>
+									{% csrf_token %}
 								</div>
 							</form>
 							<br />
@@ -226,60 +144,21 @@
 						<h3 class="center">Organization Member Registration Form</h3>
 						<!-- FORM BEGINS HERE-->
 						<div class="formDiv">
-							<form id="organizationMemberForm" action="" method="post" enctype="text/plain">
+							<form id="organizationMemberForm" action="." method="post">
 								<div>
 								<!-- <p style="display: inline; padding-left: 20%;">8 Characters</p> -->
 									<table class="tableDiv">
+										{{ org_mem_form.as_table }}
 										<tr>
-											<td>
-												<label for="orgCode">Organization Code (*)</label>
-												<input type="text" name="orgCode" required="required" placeholder="Enter your Organization Code..">
+											<td class="right">
+											<input type="submit" value="Submit" id="submitID" style="margin: auto;">
 											</td>
 											<td>
-												<label for="subscriberID">Subscriber ID (*)</label>
-												<input type="text" name="subscriberID" required="required" placeholder="Enter your Subscriber ID..">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label for="membershipStartDate">Membership Start Date</label>
-												<input type="date" name="membershipStartDate" placeholder="Specify Membership Start Date.." required="required">
-											</td>
-											<td>
-												<label for="membershipEndDate">Membership End Date</label>
-												<input type="date" name="membershipEndDate" placeholder="Specify Membership End Date.." required="required">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label for="nativeCountry">Native Country</label>
-												<input type="text" name="nativeCountry" required="required" placeholder="Enter Native Country..">
-											</td>
-											<td>
-												<label for="citizenship">Citizenship</label>
-												<input type="text" name="citizenship" required="required" placeholder="Enter Citizenship Info..">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label for="delegate">Are you a Delegate?</label><br/><br/>
-												<input type="radio" name="delegate" value="Yes">Yes</input>
-												<input type="radio" name="delegate" value="No">No</input>
-											</td>
-											<td>
-												<label for="delegateFor">Delegate For</label>
-												<input type="text" name="delegateFor" required="required" placeholder="Enter Service Code If Delegate..">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<input type="submit" value="Submit" id="submitID" style="margin: auto;">
-											</td>
-											<td>
-												<input type="reset" value="Clear" style="margin: auto;">&nbsp;&nbsp;
+											<input type="reset" value="Clear" style="margin: auto;">
 											</td>
 										</tr>
 									</table>
+									{% csrf_token %}
 								</div>
 							</form>
 							<br />
@@ -292,58 +171,21 @@
 						<h3 class="center">Subscriber Registration Form</h3>
 						<!-- FORM BEGINS HERE-->
 						<div class="formDiv">
-							<form id="subscriberForm" action="" method="post" enctype="text/plain">
+							<form id="subscriberForm" action="." method="post">
 								<div>
 								<!-- <p style="display: inline; padding-left: 20%;">8 Characters</p> -->
 									<table class="tableDiv">
+										{{ sub_form.as_table }}
 										<tr>
-											<td>
-												<label for="subscriberID">Subscriber ID (*)</label>
-												<input type="text" name="subscriberID" required="required" placeholder="Enter your Subscriber ID..">
+											<td class="right">
+											<input type="submit" value="Submit" id="submitID" style="margin: auto;">
 											</td>
 											<td>
-												<label for="orgCode">Organization Code (*)</label>
-												<input type="text" name="orgCode" required="required" placeholder="Enter your Organization Code..">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label for="serviceCode">Service Code</label>
-												<input type="text" name="serviceCode" placeholder="Specify Service Code..">
-											</td>
-											<td>
-												<label for="subscriptionRequestDate">Subscription Request Date</label>
-												<input type="date" name="subscriptionRequestDate" placeholder="Specify Subscription Request Date.." required="required">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label for="subscriptionStartDate">Subscription Start Date</label>
-												<input type="date" name="subscriptionStartDate" placeholder="Specify Subscription Start Date.." required="required">
-											</td>
-											<td>
-												<label for="subscriptionEndDate">Subscription End Date</label>
-												<input type="date" name="subscriptionEndDate" placeholder="Specify Subscription End Date.." required="required">
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<label for="motifOfCancellation">Motif Of Cancellation</label>
-												<input type="date" name="motifOfCancellation" placeholder="Specify Motif Of Cancellation.." required="required">
-											</td>
-											<td>
-
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<input type="submit" value="Submit" id="submitID" style="margin: auto;">
-											</td>
-											<td>
-												<input type="reset" value="Clear" style="margin: auto;">&nbsp;&nbsp;
+											<input type="reset" value="Clear" style="margin: auto;">
 											</td>
 										</tr>
 									</table>
+									{% csrf_token %}
 								</div>
 							</form>
 							<br />

@@ -4,8 +4,8 @@ var $ = function (id) {
 
 function passwordCheck() {
 	
-	var password = document.getElementById("pw");
-	var passwordval = document.getElementById("pw").value;
+	var password = document.getElementById("id_Password");
+	var passwordval = document.getElementById("id_Password").value;
 	var passwordlength = password.value.length;
 	var lowernum = 0;
 	var uppernum = 0;
@@ -60,8 +60,8 @@ function passwordCheck() {
 }
 
 function logincheck() {
-	var username = document.getElementById("username").value;
-	var password = document.getElementById("pw").value;
+	var username = document.getElementById("id_Username").value;
+	var password = document.getElementById("id_Password").value;
 
 	if (username === "") {
 		$("usernamemessage").style = "display: block;";

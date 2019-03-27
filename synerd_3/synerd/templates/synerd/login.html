@@ -28,6 +28,7 @@
 		.registerHeader a:hover {
 			background-color: transparent;
 		}
+
     </style>
     <script type="text/javascript" src="{% static 'synerd/scripts/validation.js' %}"></script>
 </head>
@@ -39,19 +40,10 @@
         <br/>
         </div>
     	<div class="formDiv">
-            <form id="loginform" action="" method="post" enctype="text/plain">
+            <form id="loginform" action="." method="post">
                 <div>
                 <table class="tableDiv">
-                    <tr>
-                        <td>
-                            <label for="fname">Username</label>
-                            <input type="text" name="username" id="username" required="required" maxlength="8">
-                        </td>
-                        <td>
-                            <label for="lname">Password</label>
-                            <input type="password" name="password" id="pw" required="required" maxlength="8">
-                        </td>
-                    </tr>
+                    {{ login_form.as_table }}
                     <tr>
                         <td colspan="2">
                             <input type="button" value="Login" id="submitID" style="margin: auto;" onclick="logincheck()">
@@ -73,6 +65,7 @@
                         </td>
                     </tr>
                 </table>
+                {% csrf_token %}
             </form>
             </div>
             <br />
