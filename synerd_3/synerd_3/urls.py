@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
         path('synerd/', include('synerd.url')),
         path('admin/', admin.site.urls),
+        path('api/', include('backend.api.url', namespace='api')),
 ]
