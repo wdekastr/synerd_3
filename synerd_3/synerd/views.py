@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .forms import LoginForm, RegisterForm, OfficeForm, OfficerForm, OrgForm, OrgMemForm, SubscriberForm 
+import requests
 # Create your views here.
 
 def HomePageView(request):
@@ -8,6 +9,15 @@ def HomePageView(request):
 def LoginPageView(request):
     login_form = LoginForm()
     return render(request, 'synerd/login.html', {'login_form': login_form})
+
+def SearchPageView(request):
+    searchResult = {}
+    if 'search' in request.GET:
+        search = request.GET['search']
+        url = 'http://127.0.0.1:8000/api/subscribers/?search=%s' % search
+        response = requests.get(url)
+        searchResult = response.json()
+    return render(request, 'synerd/search.html', {'searchResult': searchResult})
 
 def RegistrationPageView(request):
     register_form = RegisterForm()
