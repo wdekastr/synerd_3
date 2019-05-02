@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .forms import LoginForm, RegisterForm, OfficeForm, OfficerForm, OrgForm, OrgMemForm, SubscriberForm 
 import requests
+from django.http import HttpResponseRedirect
+from django.contrib.auth import authenticate, login
+
 # Create your views here.
 
 def HomePageView(request):
@@ -8,6 +11,27 @@ def HomePageView(request):
 
 def LoginPageView(request):
     login_form = LoginForm()
+    if request.method =='POST':
+        login_form = LoginForm(request.POST)
+        if login_form.is_valid():
+            username = login_form.cleaned_data['Username']
+            password = login_form.cleaned_data['Password']
+            user = authenticate(username=username, password=password)
+            if user is not None and user.is_staff:
+                login(request,user)
+                return HttpResponseRedirect('/admin/')
+
+            elif user is not None:
+                login(request,user)
+                return HttpResponseRedirect('/synerd/')
+
+            else:
+                return render(request, 'synerd/login.html', {'login_form': login_form})
+
+        else:
+            login_form = LoginForm()
+
+
     return render(request, 'synerd/login.html', {'login_form': login_form})
 
 def SearchPageView(request):
@@ -21,6 +45,41 @@ def SearchPageView(request):
 
 def RegistrationPageView(request):
     register_form = RegisterForm()
+    error_text = ['Username Already Exists']
+    if request.method =='POST':
+        register_form = RegisterForm(request.POST)
+        if register_form.is_valid():
+           username = register_form.cleaned_data['Username']
+           password = register_form.cleaned_data['Password']
+           firstname = register_form.cleaned_data['First_Name']
+           middlename = register_form.cleaned_data['Middle_Name']
+           lastname = register_form.cleaned_data['Last_Name']
+           address1 = register_form.cleaned_data['Address_Line_1']
+           address2 = register_form.cleaned_data['Address_Line_2']
+           city = register_form.cleaned_data['City']
+           state = register_form.cleaned_data['State']
+           zipcode = register_form.cleaned_data['Zip_Code']
+           email = register_form.cleaned_data['Email']
+           homephone = register_form.cleaned_data['Home_Phone_Number']
+           cellphone = register_form.cleaned_data['Cell_Phone_Number']
+           dob = register_form.cleaned_data['Date_Of_Birth']
+
+           response = requests.post('http://127.0.0.1:8000/api/register/', data={'username': username, 'password': password})
+           if response.status_code == 201:
+               response = requests.post('http://127.0.0.1:8000/api/createuserinfo/', data={'username': username, 'firstname': firstname, 'middlename': middlename, 'lastname': lastname, 'address1': address1, 'address2': address2, 'city': city, 'state': state, 'zipcode': zipcode, 'email': email, 'homephone': homephone, 'cellphone': cellphone, 'dob': dob})
+               user = authenticate(username=username, password=password)
+               login(request,user)
+               return HttpResponseRedirect('/synerd/')
+
+           else:
+               return render(request, 'synerd/registration.html', {'register_form': register_form, 'error_text': error_text,})
+
+        else:
+            error_text.clear()
+            error_text = ['Incorrect Date of Birth Format']
+            return render(request, 'synerd/registration.html', {'register_form': register_form, 'error_text': error_text,})
+
+    
     return render(request, 'synerd/registration.html', {'register_form': register_form})
 
 def PortalPageView(request):

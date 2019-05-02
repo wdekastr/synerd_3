@@ -1,7 +1,23 @@
 from ..models import Subscriber, Service, Organization, UserInfo
-from rest_framework import generics
-from .serializers import SubscriberSerializer, ServiceSerializer, OrganizationSerializer, UserInfoSerializer
+from rest_framework import generics, permissions
+from .serializers import SubscriberSerializer, ServiceSerializer, OrganizationSerializer, UserInfoSerializer, UserSerializer, CreateUserInfoSerializer
 from rest_framework import filters
+from rest_framework.generics import CreateAPIView
+from django.contrib.auth import get_user_model
+
+class CreateUserView(CreateAPIView):
+    model = get_user_model()
+    permission_classes = [        
+            permissions.AllowAny
+            ]
+    serializer_class = UserSerializer
+
+class CreateUserInfoView(CreateAPIView):
+    model = UserInfo
+    permission_classes = [
+            permissions.AllowAny
+            ]
+    serializer_class = CreateUserInfoSerializer
 
 class ServiceListView(generics.ListAPIView): 
     queryset = Service.objects.all() 

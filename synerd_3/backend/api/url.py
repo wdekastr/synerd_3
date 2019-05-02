@@ -9,7 +9,9 @@ urlpatterns = [
     path('subscribers/<pk>/', views.SubscriberDetailView.as_view(), name='subscribers_detail'),
     path('organizations/', views.OrganizationListView.as_view(), name='organization_list'), 
     path('organizations/<pk>/', views.OrganizationDetailView.as_view(), name='organization_detail'),
-    path('userinfo/', views.UserInfoListView.as_view(), name='userinfo_list'), 
+    path('userinfo/', views.UserInfoListView.as_view(), name='userinfo_list'),
+    path('createuserinfo/', views.CreateUserInfoView.as_view(), name='create_userinfo'),
+    path('register/', views.CreateUserView.as_view(), name='register_user'),
 
 
 ]

@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<body>
 <head>
 	<meta charset="UTF-8" >
 	<title>Synergy of Diaspora - Search</title>
@@ -19,7 +18,7 @@
     <style>
         td {
             padding: 5px;
-            width: 50%;
+            width: 65%;
         }
 
         input[type=submit] {
@@ -29,9 +28,12 @@
 			background-color: transparent;
 		}
 
+
     </style>
     <script type="text/javascript" src="{% static 'synerd/scripts/validation.js' %}"></script>
 </head>
+<body>
+
 	<div class="registerDiv">
         <div class="registerHeader">
         <br />
@@ -46,27 +48,49 @@
         <table class="tableDiv">
         	<tr>
 				<td>
-					<input type="text" name="search" placeholder="Search..." id="searchbox" value="">
+					<input type="text" name="search" placeholder="Enter query..." style="margin-bottom: 6px;" id="searchbox" value="">
 				</td>
+				<td>
+					<button type="submit" value="Search" id="submitSearch" style="" >SEARCH</button>
+                 </td>
 		    </tr>
-		    <tr>
+		    <tr><!--
 				<td colspan="2">
 					<button type="submit" value="Search" id="submitSearch" style="margin: auto;">Search</button>
-                 </td>
+                 </td>-->
             </tr>
-            </table>
-         <table class="tableDiv">
+         </table>
+         <br/>
+         <table class="tableDiv" id="searchResultTable">
+         <tr>
 		 <th>ID</th>
 		 <th>Username</th>
+		 <th>Sub. Type Code</th>
+		 <th>Service Code</th>
+		 <th>Request Date</th>
+		 <th>Start Date</th>
+		 <th>End Date</th>
+		 <th>Motif</th>
+         <th>Beneficiary ID</th>
+		 </tr>
          {%for element in searchResult%}
          	<tr>
     			<td>{{ element.subscriberID }}</td>
     			<td>{{ element.username }}</td>
+    			<td>{{ element.subscriptiontypecode }}</td>
+    			<td>{{ element.servicecode }}</td>
+    			<td>{{ element.requestdate }}</td>
+				<td>{{ element.startdate }}</td>
+				<td>{{ element.enddate }}</td>
+				<td>{{ element.motifofcancellation }}</td>
+                <td>{{ element.beneficiaryID }}</td>
             </tr>
          {% endfor %}
          </table>
          </form>
          </div>
+         <br />
+         <br />
          <br />
          <br />
     	</div>

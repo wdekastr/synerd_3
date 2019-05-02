@@ -15,17 +15,19 @@ class UserInfo(models.Model):
     firstname = models.CharField(max_length=50)
     middlename = models.CharField(max_length=50, null=True, blank=True)
     lastname = models.CharField(max_length=50)
-    email = models.EmailField()
-    address1 = models.CharField(max_length=50, null=True, blank=True)
+    address1 = models.CharField(max_length=50)
     address2 = models.CharField(max_length=50, null=True, blank=True)
-    city = models.CharField(max_length=50, null=True, blank=True)
-    state = models.CharField(max_length=50, null=True, blank=True)
-    zipcode = models.CharField(max_length=50, null=True, blank=True)
-    employername = models.CharField(max_length=50, null=True, blank=True)
+    city = models.CharField(max_length=50)
+    state = models.CharField(max_length=50)
+    zipcode = models.CharField(max_length=50)
+    email = models.EmailField()
+    homephone = models.CharField(max_length=50, null=True, blank=True)
+    cellphone = models.CharField(max_length=50, null=True, blank=True)
+    dob = models.CharField(max_length=50, null=True, blank=True)
 
 
     def __str__(self):
-        return "Username: %s, First Name: %s, Middle Name: %s, Last Name: %s, Email: %s, Address1: %s, Address2: %s, City: %s, State: %s, Zipcode: %s, Employer Name: %s" % (self.username, self.firstname, self.middlename, self.lastname, self.email, self.address1, self.address2, self.city, self.state, self.zipcode, self.employername)
+        return "Username: %s, First Name: %s, Middle Name: %s, Last Name: %s, Email: %s, Address1: %s, Address2: %s, City: %s, State: %s, Zipcode: %s" % (self.username, self.firstname, self.middlename, self.lastname, self.email, self.address1, self.address2, self.city, self.state, self.zipcode)
 
 
 class SubscriptionType(models.Model):
@@ -71,7 +73,7 @@ class Organization(models.Model):
  
 
     def __str__(self):
-        return "Organization Code: %s, Organization Name: %s, Description: %s, Date Joined: %s, Address1: %s, Address2: %s, City: %s, State: %s, Zipcode: %s, Phonenumber: %s" % (self.organizationcode, self.organizationname, self.description, self.datejoined, self.address1, self.address2, self.city, self.state, self.zipcode, self.phonenumber)
+        return "Organization Code: %s, Organization Name: %s, City: %s, State: %s, Zipcode: %s, Phonenumber: %s" % (self.organizationcode, self.organizationname, self.city, self.state, self.zipcode, self.phonenumber)
 
 
 class Subscriber(models.Model):
@@ -88,7 +90,7 @@ class Subscriber(models.Model):
 
     def __str__(self):
         #return "Subscriber ID: %s, Username: %s, Subscription Type Code: %s, Service Code: %s, Request Date: %s, Start Date: %s, End Date: %s, Motif: %s, Beneficiary ID: %s" % (self.subscriberID, self.username, self.subscriptiontypecode, self.servicecode, self.requestdate, self.startdate, self.enddate, self.motifofcancellation, self.beneficiaryID)
-        return "Subscriber ID: %s, Username %s" % (self.subscriberID, self.username)
+        return "Subscriber ID: %s, Username: %s, Subscription Type Code: %s, Service Code: %s" % (self.subscriberID, self.username.username, self.subscriptiontypecode.subscriptiontypecode, self.servicecode.servicecode)
 
 
 class TransferredSubscription(models.Model):
@@ -100,7 +102,7 @@ class TransferredSubscription(models.Model):
    subscriberID = models.ForeignKey(Subscriber, on_delete=models.CASCADE)
 
    def __str__(self):
-       return "Transfer ID: %s, Transfer From: %s, Transfer To: %s, Request Date: %s, Transfer Date: %s, Subscriber ID: %s" % (self.transferID, self.transferfrom, self.transferto, self.requestdate, self.transferdate, self.subscriberID)
+       return "Transfer ID: %s, Transfer From: %s, Transfer To: %s, Request Date: %s, Transfer Date: %s, Subscriber ID: %s" % (self.transferID, self.transferfrom, self.transferto, self.requestdate, self.transferdate, self.subscriberID.subscriberID)
 
 
 class Officer(models.Model):
@@ -123,5 +125,5 @@ class OrganizationMember(models.Model):
    is_delegate = models.BooleanField()
 
    def __str__(self):
-       return "Organization Code: %s, Subscriber ID: %s, Start Date: %s, End Date: %s, Native Country: %s, Citizenship: %s, Delegate: %s" % (self.organizationcode, self.subscriberID, self.startdate, self.enddate, self.nativecountry, self.citizenship, self.is_delegate)
+       return "Organization Code: %s, SubscriberID: %s, Start Date: %s, End Date: %s, Native Country: %s, Citizenship: %s, Delegate: %s" % (self.organizationcode.organizationcode, self.subscriberID.subscriberID, self.startdate, self.enddate, self.nativecountry, self.citizenship, self.is_delegate)
 

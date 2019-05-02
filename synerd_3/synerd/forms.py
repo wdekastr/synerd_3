@@ -1,5 +1,7 @@
 from django import forms
 
+YEARS=[x for x in range(1920,2019)]
+
 STATE_CHOICES=[
     ('', 'State'),
     ('AL', 'AL - Alabama'),('AK', 'AK - Alaska'),
@@ -36,35 +38,22 @@ class LoginForm(forms.Form):
 class RegisterForm(forms.Form):
     Username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Create a username..'}))
     Password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Create a password..', 'onkeyup': 'passwordCheck()'}))
-    Subscriber_ID = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter Subscriber ID..'}))
-    First_Name = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': 'First name..'}))
+    First_Name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'First name..'}))
     Middle_Name = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': 'Middle name..'}))
     Last_Name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Last name..'}))
-    DOB_Day = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': 'Enter day of birth..'}))
-    DOB_Month = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': 'Enter month of birth'}))
-    DOB_Year = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': 'Enter year of birth'}))
-    Email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'example@domain.com'}))
-    Home_Phone_Number = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Cell Phone #..'})) 
-    Cell_Phone_Number = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Cell Phone #..'})) 
     Address_Line_1 = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter Address Line 1..'}))
-    Address_Line_2 = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter Address Line 2..'}))
+    Address_Line_2 = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': 'Enter Address Line 2..'}))
     City = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Enter City..'}))
+    State = forms.CharField(widget=forms.Select(choices=STATE_CHOICES))
     Zip_Code = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Zip Code..'}))
-    Employer_Name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Employer Name..'}))
-    Employer_Address_Line_1 = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Employer Address Line 1..'}))
-    Employer_Address_Line_2 = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Employer Address Line 2..'}))
-    Employer_City = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Employer City..'}))
-    Employer_State = forms.CharField(widget=forms.Select(choices=STATE_CHOICES))
-    Employer_Zip = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Employer Zip..'}))
-    Employer_Phone = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Employer Phone..'}))
-    Job_Title = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Job Title..'}))
-    Government_ID_Type = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Government ID Type..'}))
-    Government_ID_Number = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Government ID Number..'}))
-    Government_ID_Issue_Country = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Government ID Issue Country..'}))
-    Government_ID_Issue_State = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Government ID Issue State..'}))
-    Government_ID_Issue_Date = forms.DateField(input_formats=['%Y-%m-%d'], widget=forms.TextInput(attrs={'placeholder': 'Government ID Issue Date..'}))
-    Government_ID_Expire_Date = forms.DateField(input_formats=['%Y-%m-%d'], widget=forms.TextInput(attrs={'placeholder': 'Government ID Expire Date..'}))
-    Beneficiary_ID = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Beneficiary ID..'}))
+    #Email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'example@domain.com'}))
+    Email = forms.EmailField()
+    Home_Phone_Number = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': 'Cell Phone #..'}))
+    Cell_Phone_Number = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': 'Cell Phone #..'}))
+    #Date_Of_Birth = forms.DateField(required=False, widget=forms.SelectDateWidget(empty_label=("Year", "Month", "Day",),years=YEARS,))
+    Date_Of_Birth = forms.DateField(label='Date of Birth',
+         widget=forms.DateInput(format='%m/%d/%Y',attrs={'placeholder': '03/31/1989'}),
+         input_formats=['%m/%d/%Y',])
 
 class OfficeForm(forms.Form):
     Office_Name = forms.CharField( widget=forms.TextInput(attrs={'placeholder': 'Enter your Office Name..'}))
