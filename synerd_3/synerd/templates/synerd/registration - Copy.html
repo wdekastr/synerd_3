@@ -1,0 +1,278 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+	<meta charset="UTF-8" >
+	<title>Synergy of Diaspora - Registration</title>
+    <link id="pagestyle" rel="stylesheet" type="text/css" href="{% static 'synerd/css/css.css' %}">
+	<script>
+		function swapCSS(sheet) {
+			document.getElementById('pagestyle').setAttribute('href', sheet);
+			localStorage.setItem("sheet", sheet);
+			}
+
+		window.onload
+			swapCSS(localStorage.getItem("sheet") || "{% static 'synerd/css/css.css' %}" );
+
+	</script>
+	<style>
+        td {
+            padding: 5px;
+            width: 50%;
+        }
+		.registerHeader a:hover {
+			background-color: transparent;
+		}
+
+    </style>
+    <script type="text/javascript" src="{% static 'synerd/scripts/validation.js' %}"></script>
+</head>
+	<div class="registerDiv">
+        <div class="registerHeader">
+        <br />
+        <a href="{% url 'home' %}"><img class="center" style="width: 20%;" src="{% static 'synerd/images/logo.png' %}" alt="logo" /></a>
+        <h2 id="demos">synerD User Registration Form</h2>
+        </div>
+    	<div class="formDiv">
+            <form id="registerform" action="" method="post" enctype="text/plain">
+                <div>
+                <!-- <p style="display: inline; padding-left: 20%;">8 Characters</p> -->
+				<br /><br /><br />
+                <table class="tableDiv">
+
+					<tr>
+                        <td>
+                            <label for="fname">Username (*)</label>
+                            <input type="text" name="username" required="required" maxlength="8" placeholder="Create a username..">
+                        </td>
+                        <td>
+                            <label for="lname">Password (*)</label>
+                            <p style="display: inline; padding-left: 20%;"></p>
+                            <input type="password" name="password" id="pw" required="required" maxlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}" onkeyup="passwordCheck()" placeholder="Create a password..">
+                        </td>
+                    </tr>
+
+
+				</table>
+				<br /><br /><br />
+				<table class="tableDiv">
+
+
+                    <tr>
+						<td>
+							<label for="subscriberID">Subscriber ID (*)</label>
+                            <input type="text" name="subscriberID" required="required" placeholder="Enter Subscriber ID..">
+						</td>
+                        <td>
+                            <label for="fname">First Name</label>
+                            <input type="text" name="firstname" placeholder="First name..">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="mname">Middle name</label>
+                            <input type="text" name="middlename" placeholder="Middle name..">
+                        </td>
+						<td>
+                            <label for="lname">Last Name (*)</label>
+                            <input type="text" name="lastname" placeholder="Last name.." required="required">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="dobDay">DOB Day</label>
+                            <input type="text" name="dobDay" placeholder="Enter the day of the month you were born..." required="required">
+                        </td>
+						<td>
+                            <label for="dobMonth">DOB Month</label>
+                            <input type="text" name="dobMonth" placeholder="Enter the month you were born..." required="required">
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="dobYear">DOB Year</label>
+                            <input type="text" name="dobYear" placeholder="Enter the year you were born..." required="required">
+                        </td>
+						<td>
+                            <label for="email">Email (*)</label>
+                            <input type="email" name="email" placeholder="example@domain.com" required="required">
+                        </td>
+					</tr>
+					<tr>
+						<td>
+							<label for="homephonenumber">Home Phone #</label>
+                            <input type="text" name="homephonenumber" placeholder="Cell Phone #.." required="required">
+						</td>
+						<td>
+							<label for="cellphonenumber">Cell Phone #</label>
+                            <input type="text" name="cellphonenumber" placeholder="Cell Phone #.." required="required">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="address1">Address Line 1</label>
+							<input type="text" name="address1" required="required" placeholder="Enter Address Line 1..">
+						</td>
+						<td>
+							<label for="address2">Address Line 2</label>
+							<input type="text" name="address2" required="required" placeholder="Enter Address Line 2..">
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<label for="city">City</label>
+							<input type="text" name="city" required="required" placeholder="Enter City..">
+						</td>
+						<td>
+                            <label for="lname">State (*)</label>
+                            <!--<input type="text" name="state" placeholder="State..">-->
+                            <select name="state" required="required">
+                                <option value ="" selected disabled hidden>State</option>
+                                <option value ="AL">AL - Alabama</option><option value ="AK">AK - Alaska</option>
+                                <option value ="AZ">AZ - Arizona</option><option value ="AR">AR - Arkansas</option>
+                                <option value ="CA">CA - California</option><option value ="CO">CO - Colorado</option>
+                                <option value ="CT">CT - Connecticut</option><option value ="DE">DE - Delware</option>
+                                <option value ="FL">FL - Florida</option><option value ="GA">GA - Georgia</option>
+                                <option value ="HI">HI - Hawaii</option><option value ="ID">ID - Idaho</option>
+                                <option value ="IL">IL - Illinois</option><option value ="IN">IN - Indiana</option>
+                                <option value ="IA">IA - Iowa</option><option value ="KS">KS - Kansas</option>
+                                <option value ="KY">KY - Kentucky</option><option value ="LA">LA - Louisiana</option>
+                                <option value ="ME">ME - Maine</option><option value ="MD">MD - Maryland</option>
+                                <option value ="MA">MA - Massachusetts</option><option value ="MI">MI - Michigan</option>
+                                <option value ="MN">MN - Minnesota</option><option value ="MS">MS - Mississippi</option>
+                                <option value ="MO">MO - Missouri</option><option value ="MT">MT - Montana</option>
+                                <option value ="NE">NE - Nebraska</option><option value ="NV">NV - Nevada</option>
+                                <option value ="NH">NH - New Hampshire</option><option value ="NJ">NJ - New Jersey</option>
+                                <option value ="NM">NM - New Mexico</option><option value ="NY">NY - New York</option>
+                                <option value ="NC">NC - North Carolina</option><option value ="ND">ND - North Dakota</option>
+                                <option value ="OH">OH - Ohio</option><option value ="OK">OK - Oklahoma</option>
+                                <option value ="OR">OR - Oregon</option><option value ="PA">PA - Pennsylvania</option>
+                                <option value ="RI">RI - Rhode Island</option><option value ="SC">SC - South Carolina</option>
+                                <option value ="SD">SD - South Dakota</option><option value ="TN">TN - Tennessee</option>
+                                <option value ="TX">TX - Texas</option><option value ="UT">UT - Utah</option>
+                                <option value ="VT">VT - Vermont</option><option value ="VA">VA - Virginia</option>
+                                <option value ="WA">WA - Washington</option><option value ="WV">WV - West Virginia</option>
+                                <option value ="WI">WI - Wisconsin</option><option value ="WY">WY - Wyoming</option>
+                            </select>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label for="lname">Zip Code (*)</label>
+                            <input type="text" name="zipcode" placeholder="Zip Code.." required="required">
+                        </td>
+						<td>
+
+						</td>
+					</tr>
+				</table>
+				<br /><br /><br />
+				<table class="tableDiv">
+					<tr>
+						<td>
+                            <label for="employerName">Employer Name</label>
+                            <input type="text" name="employerName" placeholder="Employer Name..">
+                        </td>
+                        <td>
+                            <label for="employerAddress1">Employer Address Line 1</label>
+                            <input type="text" name="employerAddress1" placeholder="Employer Address Line 1..">
+                        </td>
+                    </tr>
+					<tr>
+						<td>
+                            <label for="employerAddress2">Employer Address Line 2</label>
+                            <input type="text" name="employerAddress2" placeholder="Employer Address Line 2..">
+                        </td>
+                        <td>
+                            <label for="employerCity">Employer City</label>
+                            <input type="text" name="employerCity" placeholder="Employer City..">
+                        </td>
+                    </tr>
+					<tr>
+						<td>
+                            <label for="employerZip">Employer Zip</label>
+                            <input type="text" name="employerZip" placeholder="Employer Zip..">
+                        </td>
+                        <td>
+                            <label for="employerPhone">Employer Phone</label>
+                            <input type="text" name="employerPhone" placeholder="Employer Phone..">
+                        </td>
+                    </tr>
+					<tr>
+						<td colspan="2">
+                            <label for="jobTitle">Job Title</label>
+                            <input type="text" name="jobTitle" placeholder="Job Title..">
+                        </td>
+
+                    </tr>
+				</table>
+				<br /><br /><br />
+				<table class="tableDiv">
+					<tr>
+						<td>
+                            <label for="govIDType">Government ID Type</label>
+                            <input type="text" name="govIDType" placeholder="Government ID Type..">
+                        </td>
+                        <td>
+                            <label for="govIDNumber">Government ID Number</label>
+                            <input type="text" name="govIDNumber" placeholder="Government ID Number..">
+                        </td>
+                    </tr>
+					<tr>
+						<td>
+                            <label for="govIDIssueCountry">Government ID Issue Country</label>
+                            <input type="text" name="govIDIssueCountry" placeholder="Government ID Issue Country..">
+                        </td>
+                        <td>
+                            <label for="govIDIssueState">Government ID Issue State</label>
+                            <input type="text" name="govIDIssueState" placeholder="Government ID Issue State..">
+                        </td>
+                    </tr>
+					<tr>
+						<td>
+                            <label for="govIDIssueDate">Government ID Issue Date</label>
+							<input type="date" name="govIDIssueDate" placeholder="Government ID Issue Date..">
+                        </td>
+                        <td>
+                            <label for="govIDExpireDate">Government ID Expire Date</label>
+							<input type="date" name="govIDExpireDate" placeholder="Government ID Expire Date..">
+                        </td>
+                    </tr>
+					<tr>
+                        <td>
+                            <label for="beneficiaryID">Beneficiary ID</label>
+                            <input type="text" name="beneficiaryID" placeholder="Beneficiary ID.." required="required">
+                        </td>
+                        <td>
+                            <span id="lowererrormessage" style="display: none;">Password Requires a lowercase letter.<br /></span>
+                            <span id="uppererrormessage" style="display: none;">Password Requires an uppercase letter.<br /></span>
+                            <span id="digiterrormessage" style="display: none;">Password Requires a digit.<br /></span>
+                            <span id="lengtherrormessage" style="display: none;">Password must 4 to 8 in length</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Submit" id="submitID" style="margin: auto;">
+                        </td>
+                        <td>
+                            <input type="reset" value="Clear" style="margin: auto;">&nbsp;&nbsp;
+                        </td>
+                    </tr>
+                </table>
+                <span id="emailaddresserror">&nbsp;</span> <!-- Span that holds the email check error -->
+            </form>
+            </div>
+            <br />
+            <br />
+    	</div>
+	</div>
+	<div class="center"><a href="#" onclick="swapCSS('{% static 'synerd/css/css.css' %}')">LIGHT THEME</a><a href="#" onclick="swapCSS('{% static 'synerd/css/cssdark.css' %}')">DARK THEME</a></div>
+</body>
+</html>

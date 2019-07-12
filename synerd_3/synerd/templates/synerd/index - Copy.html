@@ -43,33 +43,20 @@
 			<div class="right"><a class="aSpacing" href="#" >GALLERIES</a> <a class="aSpacing" href="#" >ABOUT US</a> <a class="aSpacing" href="#" >CONTACT US</a> <input class="aSpacing searchField" type="text" placeholder="Search synerD..."></input><button>Search</button></div>
 			<img class="floatleft" style="width: 300px; padding-left: 10px;" src="{% static 'synerd/images/logo.png' %}" alt="logo" /> <p class="right" style="font-size: 24px;">Let's Serve Purposefully
 			<a href="#">
-				<svg style="width: 100px; height: 30px;">
+				<svg style="width: 100px; height: 30px;"">
   					<rect width="300" height="100" style="fill:rgb(97,123,255)"/>
 					<text fill="#000000" font-size="22" font-family="Arial" font-weight="bold" x="15" y="22">Donate</text>
 					Sorry, your browser does not support inline SVG.
 				</svg>
 				<!--<img style="width: 5%; padding-left: 15px; padding-right: 15px; padding-top: 5px; padding-bottom: 5px; background-color: #617bff;" src="{% static 'synerd/images/donate.png' %}" alt="dontate" />-->
 			</a></p>
-			<p class="right">
-				{% if user.is_authenticated %}
-				<a class="aSpacing" href="{% url 'logout' %}">LOG OUT</a> |
-				{% else %}
-				<a class="aSpacing" href="{% url 'login' %}">SIGN IN</a> |
-				{% endif %}
-				<a class="aSpacing" href="{% url 'registration' %}">JOIN US</a>
-				{% if user.is_authenticated and user.is_staff %}
-				| <a class="aSpacing" href="/admin/">ADMIN SITE</a>
-				{% endif %}
-			</p>
-			{% if user.is_authenticated %}
-			<p class="right">Hello {{ user.username }}!&nbsp;&nbsp;&nbsp;</p>
-			{% endif %}
+			<p class="right"><a class="aSpacing" href="{% url 'login' %}">SIGN IN</a> | <a class="aSpacing" href="{% url 'registration' %}">JOIN US</a></p><br />
 			<!--Start of Navigation Bar -->
 			<nav class="right">
 			<ul>
 				<li><a href="{% url 'home' %}">HOME</a></li>
 				<li><a href="#">OUR WORK</a></li>
-				<li><a href="{% url 'search' %}">MEMBERS</a></li>
+				<li><a href="#">MEMBERS</a></li>
                 <li><a href="#">RESOURCES</a></li>
 			</ul>
 			</nav>

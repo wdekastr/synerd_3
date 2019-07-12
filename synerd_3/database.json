@@ -1,0 +1,337 @@
+[
+{
+  "model": "backend.userinfo",
+  "pk": "atambo",
+  "fields": {
+    "firstname": "Alloy",
+    "middlename": "Etan",
+    "lastname": "Tambo",
+    "address1": "7960 Amerige St.",
+    "address2": null,
+    "city": "Wheaton",
+    "state": "MA",
+    "zipcode": "02760",
+    "email": "atambo@cox.net",
+    "homephone": "521-345-2329",
+    "cellphone": null,
+    "dob": null
+  }
+},
+{
+  "model": "backend.userinfo",
+  "pk": "jdoe",
+  "fields": {
+    "firstname": "John",
+    "middlename": null,
+    "lastname": "Doe",
+    "address1": "424 W Salt Lake St",
+    "address2": "Bldg 23",
+    "city": "Mesa",
+    "state": "AZ",
+    "zipcode": "85281",
+    "email": "jdoe@gmail.com",
+    "homephone": null,
+    "cellphone": "602-129-8023",
+    "dob": "9/2/1981"
+  }
+},
+{
+  "model": "backend.userinfo",
+  "pk": "jdoe123",
+  "fields": {
+    "firstname": "John",
+    "middlename": "",
+    "lastname": "Dough",
+    "address1": "123 E. Dough St.",
+    "address2": "",
+    "city": "Mesa",
+    "state": "AZ",
+    "zipcode": "85209",
+    "email": "Dough@jdoe.net",
+    "homephone": "",
+    "cellphone": "",
+    "dob": "1955-01-25"
+  }
+},
+{
+  "model": "backend.userinfo",
+  "pk": "kkorver",
+  "fields": {
+    "firstname": "Kamikase",
+    "middlename": null,
+    "lastname": "Korver",
+    "address1": "488 Main St.",
+    "address2": null,
+    "city": "Somerset",
+    "state": "NJ",
+    "zipcode": "08873",
+    "email": "kkam@aol.com",
+    "homephone": null,
+    "cellphone": "(258) 610-2341",
+    "dob": null
+  }
+},
+{
+  "model": "backend.userinfo",
+  "pk": "trandal",
+  "fields": {
+    "firstname": "tanner",
+    "middlename": "",
+    "lastname": "randall",
+    "address1": "someaddress st.",
+    "address2": "",
+    "city": "Mesa",
+    "state": "AZ",
+    "zipcode": "50952",
+    "email": "trandal@asu.edu",
+    "homephone": "",
+    "cellphone": "",
+    "dob": "1955-01-31"
+  }
+},
+{
+  "model": "backend.userinfo",
+  "pk": "trandal6",
+  "fields": {
+    "firstname": "tra",
+    "middlename": "",
+    "lastname": "las",
+    "address1": "123",
+    "address2": "123",
+    "city": "123",
+    "state": "AZ",
+    "zipcode": "70521",
+    "email": "tra@cox.net",
+    "homephone": "",
+    "cellphone": "",
+    "dob": "1955-01-31"
+  }
+},
+{
+  "model": "backend.userinfo",
+  "pk": "Trandall",
+  "fields": {
+    "firstname": "tanner",
+    "middlename": "",
+    "lastname": "randall",
+    "address1": "2512 E butss",
+    "address2": "",
+    "city": "mesa",
+    "state": "AZ",
+    "zipcode": "85209",
+    "email": "trandal@asu.edu",
+    "homephone": "",
+    "cellphone": "",
+    "dob": "1995-01-31"
+  }
+},
+{
+  "model": "backend.userinfo",
+  "pk": "vyelsin",
+  "fields": {
+    "firstname": "Victor",
+    "middlename": "H",
+    "lastname": "Yelsin",
+    "address1": "8621 Brook Street",
+    "address2": null,
+    "city": "Norman",
+    "state": "NJ",
+    "zipcode": "08759",
+    "email": "vyelsin@mail.com",
+    "homephone": null,
+    "cellphone": "457-620-8902",
+    "dob": null
+  }
+},
+{
+  "model": "backend.subscriptiontype",
+  "pk": "NIND",
+  "fields": {
+    "subscriptiontypename": "individual - new subscriber"
+  }
+},
+{
+  "model": "backend.subscriptiontype",
+  "pk": "NORG",
+  "fields": {
+    "subscriptiontypename": "organization - new subscriber"
+  }
+},
+{
+  "model": "backend.subscriptiontype",
+  "pk": "RIND",
+  "fields": {
+    "subscriptiontypename": "individual - returning subscriber"
+  }
+},
+{
+  "model": "backend.subscriptiontype",
+  "pk": "RORG",
+  "fields": {
+    "subscriptiontypename": "organization - returning subscriber"
+  }
+},
+{
+  "model": "backend.subscriptiontype",
+  "pk": "TRANS",
+  "fields": {
+    "subscriptiontypename": "transferred subscriber"
+  }
+},
+{
+  "model": "backend.service",
+  "pk": "IDTheft",
+  "fields": {
+    "servicename": "Identity theft monitoring",
+    "description": "",
+    "premium": "3.00",
+    "allocation": null
+  }
+},
+{
+  "model": "backend.service",
+  "pk": "SAGI",
+  "fields": {
+    "servicename": "Active solidarity",
+    "description": "Facilitate the transportation of the remains of its members, deceased in the USA, to their respective countries",
+    "premium": "1.95",
+    "allocation": "15000"
+  }
+},
+{
+  "model": "backend.office",
+  "pk": "FS",
+  "fields": {
+    "officename": "Financial Secretary",
+    "attribution": null
+  }
+},
+{
+  "model": "backend.office",
+  "pk": "PDT",
+  "fields": {
+    "officename": "President",
+    "attribution": "Represent the organizarion"
+  }
+},
+{
+  "model": "backend.office",
+  "pk": "SG",
+  "fields": {
+    "officename": "General Secretary",
+    "attribution": null
+  }
+},
+{
+  "model": "backend.office",
+  "pk": "SGA",
+  "fields": {
+    "officename": "Deputy General Secretary",
+    "attribution": null
+  }
+},
+{
+  "model": "backend.office",
+  "pk": "VP",
+  "fields": {
+    "officename": "Vice-president",
+    "attribution": "Assume the presidency in the event the president is unavailable"
+  }
+},
+{
+  "model": "backend.organization",
+  "pk": "CAMAZ",
+  "fields": {
+    "organizationname": "Association of Cameroonians in Arizona",
+    "description": "To unite Cameroonians and friends in AZ to foster a spirit of community and fraternity and provide charitable, cultural, health, and social activities",
+    "datejoined": null,
+    "address1": "6849 S. Riverview Way",
+    "address2": null,
+    "city": "Mesa",
+    "state": "AZ",
+    "zipcode": "85722",
+    "phonenumber": "623-344-0987"
+  }
+},
+{
+  "model": "backend.organization",
+  "pk": "FCAS",
+  "fields": {
+    "organizationname": "Francophony club of Americas",
+    "description": "Gathering of french-speaking people in the USA",
+    "datejoined": null,
+    "address1": "789 E Calle Drive",
+    "address2": null,
+    "city": "Atlanta",
+    "state": "GA",
+    "zipcode": null,
+    "phonenumber": "678-980-2354"
+  }
+},
+{
+  "model": "backend.subscriber",
+  "pk": "120001",
+  "fields": {
+    "username": "vyelsin",
+    "subscriptiontypecode": "NIND",
+    "servicecode": "IDTheft",
+    "requestdate": "2019-03-08",
+    "startdate": "2019-03-11",
+    "enddate": null,
+    "motifofcancellation": "",
+    "beneficiaryID": "120010"
+  }
+},
+{
+  "model": "backend.subscriber",
+  "pk": "120010",
+  "fields": {
+    "username": "jdoe",
+    "subscriptiontypecode": "TRANS",
+    "servicecode": "SAGI",
+    "requestdate": "2019-03-05",
+    "startdate": "2019-03-11",
+    "enddate": null,
+    "motifofcancellation": "",
+    "beneficiaryID": "120001"
+  }
+},
+{
+  "model": "backend.subscriber",
+  "pk": "120015",
+  "fields": {
+    "username": "atambo",
+    "subscriptiontypecode": "RORG",
+    "servicecode": "SAGI",
+    "requestdate": "2019-03-05",
+    "startdate": "2019-03-15",
+    "enddate": null,
+    "motifofcancellation": "",
+    "beneficiaryID": "120010"
+  }
+},
+{
+  "model": "backend.transferredsubscription",
+  "pk": "00001",
+  "fields": {
+    "transferfrom": "FCAS",
+    "transferto": "CAMAZ",
+    "requestdate": "2019-03-03",
+    "transferdate": "2019-03-05",
+    "subscriberID": "120010"
+  }
+},
+{
+  "model": "backend.organizationmember",
+  "pk": 3,
+  "fields": {
+    "organizationcode": "CAMAZ",
+    "subscriberID": "120015",
+    "startdate": "2019-02-01",
+    "enddate": null,
+    "nativecountry": "Nigeria",
+    "citizenship": "USA",
+    "is_delegate": true
+  }
+}
+]

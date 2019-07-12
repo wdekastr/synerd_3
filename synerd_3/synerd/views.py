@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .forms import LoginForm, RegisterForm, OfficeForm, OfficerForm, OrgForm, OrgMemForm, SubscriberForm 
 import requests
 from django.http import HttpResponseRedirect
 from django.contrib.auth import authenticate, login
+from backend.models import Service
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -42,6 +44,21 @@ def SearchPageView(request):
         response = requests.get(url)
         searchResult = response.json()
     return render(request, 'synerd/search.html', {'searchResult': searchResult})
+
+def ServiceView(request):
+    ServicesResult = Service.objects.all()
+    paginator = Paginator(ServicesResult, 1)
+
+    page = request.GET.get('page')
+    services = paginator.get_page(page)
+    return render(request, 'synerd/services.html', {'services': services})
+
+def DynamicServiceView(request, code):
+    obj = get_object_or_404(Service, servicecode=code)
+    context = {
+            "service": obj
+            }
+    return render(request, 'synerd/servicesearch.html', context)
 
 def RegistrationPageView(request):
     register_form = RegisterForm()
@@ -92,9 +109,9 @@ def PortalPageView(request):
     return render(request, 'synerd/portal.html', {
         'office_form': office_form,
         'officer_form': officer_form,
-	'org_form': org_form,
-	'org_mem_form': org_mem_form,
-	'sub_form': sub_form,
+      	'org_form': org_form,
+      	'org_mem_form': org_mem_form,
+      	'sub_form': sub_form,
 	
     })
 

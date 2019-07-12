@@ -10,4 +10,6 @@ urlpatterns = [
         path('portal/', views.PortalPageView, name='portal'),
         path('search/', views.SearchPageView, name='search'),
         path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+        path('services/', views.ServiceView, name='service'),
+        path('service/<str:code>/', views.DynamicServiceView, name='service'),
 ]

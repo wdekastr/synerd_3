@@ -1,0 +1,426 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tabl",
+				"tableDiv"
+			],
+			[
+				"em",
+				"email2a"
+			],
+			[
+				"first",
+				"first_name"
+			],
+			[
+				"email",
+				"email2"
+			],
+			[
+				"c",
+				"conglomerates"
+			],
+			[
+				"hea",
+				"healthcare"
+			],
+			[
+				"fin",
+				"financial"
+			],
+			[
+				"con",
+				"consumergoods"
+			],
+			[
+				"lo",
+				"loop\tAttr"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"content",
+				"contentFocus"
+			],
+			[
+				"conte",
+				"contentText"
+			],
+			[
+				"upp",
+				"uppererrormessage"
+			],
+			[
+				"lower",
+				"lowererrormessage"
+			],
+			[
+				"tex",
+				"text-indent"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"max",
+				"maxlength\tAttr"
+			],
+			[
+				"pad",
+				"padding-right"
+			],
+			[
+				"marg",
+				"margin-left"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"tr",
+				"tr\tTag"
+			],
+			[
+				"cen",
+				"align-content"
+			],
+			[
+				"id",
+				"idList"
+			],
+			[
+				"move",
+				"move3"
+			],
+			[
+				"movena",
+				"moveNamesEdit"
+			],
+			[
+				"p",
+				"pMargin"
+			],
+			[
+				"total",
+				"totalGallons"
+			],
+			[
+				"fut",
+				"future_value"
+			],
+			[
+				"y",
+				"years_error"
+			],
+			[
+				"inter",
+				"interest_error"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"margi",
+				"margin-left"
+			],
+			[
+				"paddin",
+				"padding-right"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"re",
+				"required\tAttr"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"border",
+				"border-width"
+			],
+			[
+				"backgro",
+				"background-color"
+			],
+			[
+				"back",
+				"backgroundcolorblack"
+			],
+			[
+				"text",
+				"text-shadow"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"size",
+				"font-size"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"font-st",
+				"font-style"
+			],
+			[
+				"textd",
+				"text-decoration-style"
+			],
+			[
+				"align",
+				"align-items"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 35.0,
+		"last_filter": "prettify",
+		"selected_items":
+		[
+			[
+				"prettify",
+				"Preferences: Settings – Syntax Specific"
+			],
+			[
+				"install",
+				"Install Package Control"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/cygwin64/home/Glower/virtualenvs/synerd/projects/synerd_3/synerd/static/synerd/css/css.css",
+		"/C/cygwin64/home/Glower/virtualenvs/synerd/projects/synerd_3/synerd/static/synerd/scripts/validation.js",
+		"/C/cygwin64/home/Glower/virtualenvs/synerd/projects/synerd_3/synerd/templates/synerd/portal.html",
+		"/C/cygwin64/home/Glower/virtualenvs/synerd/projects/synerd_3/synerd/templates/synerd/registration.html",
+		"/C/cygwin64/home/Glower/virtualenvs/synerd/projects/synerd_3/synerd/templates/synerd/login.html",
+		"/C/cygwin64/home/Glower/virtualenvs/topic6/dj_projects/topic6/website/templates/website/contact/login.html",
+		"/D/ASU/Eigth Term/IFT 458/Topic 6 Django Frameworks/PD6/scripts/validation.js",
+		"/C/cygwin64/home/Glower/virtualenvs/topic6/dj_projects/topic6/website/static/website/css/style3.css",
+		"/D/ASU/Eigth Term/IFT 458/Assignment 2/assignment1_jQuerytestingcopy.html",
+		"/D/ASU/Eigth Term/IFT 458/Assignment 2/assignment1_jQuery.html",
+		"/D/ASU/Eigth Term/IFT 458/Assignment 2/assignment1_jQuerytesting.html",
+		"/D/ASU/Eigth Term/IFT 458/PD1forReal/index.html",
+		"/D/ASU/Eigth Term/IFT 458/PD1forReal/login.html",
+		"/D/ASU/Eigth Term/IFT 458/PD1forReal/registration.html",
+		"/D/ASU/Eigth Term/IFT 458/PD1forReal/scripts/validation.js",
+		"/D/ASU/Eigth Term/IFT 458/PD1forReal/css/cssdark.css",
+		"/D/ASU/Eigth Term/IFT 458/PD1forReal/css/css.css",
+		"/D/ASU/Eigth Term/IFT 458/Assignment1.html",
+		"/C/Users/Glower/AppData/Local/Google/Chrome/User Data/Default/Extensions/gidgenkbbabolejbgbpnhbimgjbffefm/1.8.3_0/uglify.js",
+		"/D/ASU/Fifth Term/IFT 301/Final Website/Final_Website Newer/scripts/generator.js",
+		"/D/ASU/Fifth Term/IFT 301/HW/HW14/townhall.html",
+		"/D/ASU/Fifth Term/IFT 301/HW/HW5/HW_Wk5.html",
+		"/D/ASU/Fifth Term/IFT 301/CW/CW14/townhall.html",
+		"/D/ASU/Fifth Term/IFT 301/Final Website/Final_Website Newer/compendium.html",
+		"/D/ASU/Fifth Term/IFT 301/HW/HW13/Part 2/slide_show.html",
+		"/D/ASU/Fifth Term/IFT 301/HW/HW13/Part 2/slide_show.css",
+		"/D/ASU/Fifth Term/IFT 301/HW/HW13/Part 2/slide_show.js",
+		"/D/ASU/Fifth Term/IFT 301/HW/HW13/Part 1/imagegallery.html",
+		"/D/ASU/Fifth Term/IFT 301/HW/HW13/Part 1/main.css",
+		"/D/ASU/Fifth Term/IFT 301/HW/HW13/Part 1/image_gallery.js",
+		"/D/ASU/Fifth Term/IFT 301/HW/HW13/Part 2/slideshowex.js",
+		"/D/ASU/Fifth Term/IFT 301/HW/HW13/Part 2/slide_showex.html",
+		"/D/ASU/Fifth Term/IFT 301/CW/CW9/CW9extracodeexamples.html",
+		"/D/ASU/Fifth Term/IFT 301/Final Website/Final PAGE/css/css.css",
+		"/D/ASU/Fifth Term/IFT 301/Final Website/Final PAGE/sociallinks.html",
+		"/D/ASU/Fifth Term/IFT 301/Final Website/Final PAGE/generator.html",
+		"/D/ASU/Fifth Term/IFT 301/Final Website/Final PAGE/credits.html",
+		"/D/ASU/Fifth Term/IFT 301/Final Website/Final PAGE/compendium.html",
+		"/D/ASU/Fifth Term/IFT 301/Final Website/Final PAGE/about.html",
+		"/D/ASU/Fifth Term/IFT 301/Final Website/Final PAGE/index.html",
+		"/D/ASU/Fifth Term/IFT 301/Final Website/css.css",
+		"/D/ASU/Fifth Term/IFT 301/Final Website/finalproject.html",
+		"/D/ASU/Fifth Term/IFT 301/Pages/aboutmeold.html",
+		"/D/ASU/Fifth Term/IFT 301/Pages/aboutme2.html",
+		"/D/ASU/Fifth Term/IFT 301/Pages/aboutme.html"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<form",
+			"png",
+			"src",
+			"joinlist",
+			"content",
+			"6",
+			"slider",
+			"if(!h)return void console.log(\"no clockwork license found on server\");",
+			"no clockwork license found on server\");",
+			"px",
+			"tr",
+			"px",
+			"000033",
+			";\n",
+			"img",
+			"font",
+			"h1",
+			"tr",
+			"tablediv",
+			"h1"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "synerd3.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\ASU\\Eigth Term\\IFT 458\\sublime\\pd1.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
